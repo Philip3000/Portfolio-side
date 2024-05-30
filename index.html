@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Philip Preisler's Programmer Portfolio</title>
+    <meta name="description"
+        content="Philip Preisler's portfolio showcasing skills, projects, and knowledge in software development and IT security.">
+    <meta name="keywords"
+        content="Philip Preisler, Programmer, Portfolio, IT Security, Software Development, Fullstack Developer, JavaScript, Python, C#, AWS, CCNA">
+    <meta name="author" content="Philip Preisler">
+    <meta name="robots" content="index, follow">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="snackbar" style="border-radius:5px;">Phone: +45 91871747. Mail: Preisler2740@gmail.com</div>
+    <div id="app">
+
+    <!-- Navbar -->
+    <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#"><span style="font-size: 25px;" class="name">Philip Preisler's
+            </span>Portfolio</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="ShowContactInfo()"><i class="bi bi-telephone"></i> Reach out 
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about"><i class="bi bi-file-earmark-person"></i> About Me 
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#portfolio"><i class="bi bi-app-indicator"></i>
+                         Portfolio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#skills"><i class="bi bi-gear"></i>
+                        Skills</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#knowledgebase"><i class="bi bi-code-slash"></i>
+                         Knowledgebase</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="resume" target="_blank" download> <i class="bi bi-file-arrow-down"></i> Resume 
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.linkedin.com/in/philip-preisler/" target="_blank"><i class="bi bi-linkedin"></i> LinkedIn 
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://github.com/Philip3000" target="_blank">  <i
+                        class="bi bi-robot"></i> Github</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="img-container">
+        <img class="img" src="plant-background.jpg" alt="picture_of_leaves">
+        <div class="centered name"><strong>Philip Preisler</strong></div>
+    </div>
+    <!-- Sections -->
+        <section id="about" class="section">
+            <div class="container">
+                <div class="card card-aboutme">
+                    <div class="card-body">
+                        <h1 style="text-align: center;"><strong>Who am I?</strong></h1>
+                        <div class="row">
+                            <div class="card col-md-8 mt-4">
+                                <h2 style="text-align: center;">Interests</h2>
+                                <ul v-for="item in interests">
+                                    <li>
+                                        {{item.name}}
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-md-4 text-center" style="margin-top: 0px;">
+                                <img class="img-fluid" style="max-height: 300px; margin-top: 10px; border-radius: 5px;"
+                                    src="Portrait.jpeg" alt="Portrait">
+                            </div>
+                            <div class="col-md-8 mt-4" v-for="item in about">
+                                <div class="card">
+                                    <h2 style="text-align: center;">{{item.title}}</h2>
+                                    <div class="about-me" style="text-align: justify; margin-top: 20px;">
+                                        {{ item.description }}
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio" class="section">
+            <div class="container">
+                <h1 class="divider" style="text-align: center; margin-bottom: 40px;"><strong>Portfolio</strong></h1>
+                <div class="row">
+                    <div class="col-md-4" v-for="item in portfolioItems" :key="item.id">
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <h5 class="card-title" style="text-align: center;">{{ item.title }}</h5>
+                                <p class="card-text" style="text-align: justify;">{{ item.description }}</p>
+                                <a :href="item.link" class="btn btn-primary" target="_blank">Try me <i
+                                        class="bi bi-controller"></i>
+                                </a>
+                                <a :href="item.code" class="btn btn-primary" target="_blank">View on github <i
+                                        class="bi bi-robot"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="section">
+            <div class="container">
+                <h1 class="divider" style="text-align: center; margin-bottom: 40px;"><strong>Skills</strong></h1>
+                <ul class="list-group">
+                    <li class="list-group-item" v-for="skill in skills" :key="skill.id">{{ skill.name }}</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="knowledgebase" class="section">
+            <div class="container">
+                <h1 class="divider" style="text-align: center; margin-bottom: 40px;"><strong>Knowledgebase</strong></h1>
+                <div class="row">
+                    <div class="col-md-3 mt-2" v-for="item in knowledgebaseItems" :key="item.id">
+                        <a :href="item.link" style="text-decoration: none; color:white" target="_blank">
+                            <div class="card" style="width: fit-content">
+                                {{item.name}}   
+                         </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="relations" class="section">
+            <div class="container">
+                <h1 class="divider" style="text-align: center; margin-bottom: 40px;"><strong>Previous relations with</strong></h1>
+                <div class="row">
+                    <div class="col-md-2 mt-2" v-for="item in relations" :key="item.id">
+                        <a :href="item.link" style="text-decoration: none;" target="_blank">
+                            <div class="card" style="max-width: 100px;">
+                                <img :src="item.path" style="padding:0px;">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-storage.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+    <script src="index.js"></script>
+    <script>
+        function ShowContactInfo() {
+            var snackbar = document.getElementById("snackbar");
+            snackbar.className = "show";
+            setTimeout(function () { snackbar.className = snackbar.className.replace("show", ""); }, 10000);
+        }
+      
+    </script>
+</body>
+
+</html>

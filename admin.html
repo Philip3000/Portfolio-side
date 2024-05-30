@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Admin Panel</h1>
+    <form id="login-form">
+      <div class="form-group">
+        <label for="email">Email address</label>
+        <input type="email" class="form-control" id="email" placeholder="Enter email">
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" placeholder="Password">
+      </div>
+      <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+    <div id="admin-content" style="display:none;">
+      <!-- Admin Controls -->
+      <div class="card mt-4">
+        <div class="card-body">
+          <h5 class="card-title">Upload Resume</h5>
+          <input type="file" id="resume-upload">
+          <button class="btn btn-success mt-2" id="upload-resume">Upload</button>
+          
+        </div>
+      </div>
+      <div class="card mt-4" style="width:500px;">
+        <div class="card-body">
+          <h5 class="card-title">Manage Portfolio</h5>
+          <button class="btn btn-primary" id="add-portfolio">Add Portfolio Item</button>
+          <div style="margin-top:10px;" id="portfolio-list"></div>
+        </div>
+      </div>
+      <div class="card mt-4" style="width:500px;">
+        <div class="card-body">
+          <h5 class="card-title">Manage About Me</h5>
+          <button class="btn btn-primary" id="add-about">Add about</button>
+          <div style="margin-top:10px;" id="about-list"></div>
+        </div>
+      </div>
+      <div class="card mt-4" style="width:500px;">
+        <div class="card-body">
+          <h5 class="card-title">Manage Skills</h5>
+          <button class="btn btn-primary" id="add-skill">Add Skill</button>
+          <div style="margin-top:10px;" id="skills-list"></div>
+        </div>
+      </div>
+      <div class="card mt-4" style="width:500px;">
+        <div class="card-body">
+          <h5 class="card-title">Manage Interests</h5>
+          <button class="btn btn-primary" id="add-interest">Add Interest</button>
+          <div style="margin-top:10px;" id="interests-list"></div>
+        </div>
+      </div>
+      <div class="card mt-4" style="width:500px;">
+        <div class="card-body">
+          <h5 class="card-title">Manage Knowledgebase</h5>
+          <button class="btn btn-primary" id="add-knowledgebase">Add Knowledgebase Item</button>
+          <div style="margin-top:10px;" id="knowledgebase-list"></div>
+        </div>
+      </div>
+      <div class="card mt-4" style="width:500px;">
+        <div class="card-body">
+          <h5 class="card-title">Manage Relations</h5>
+          <button class="btn btn-primary" id="add-relation">Add Relation</button>
+          
+          <div style="margin-top:10px;" id="relations-list">
+            
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+
+<!-- Add Firebase products that you want to use -->
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-storage.js"></script>
+
+  <script src="admin.js"></script>
+</body>
+</html>
