@@ -1,11 +1,11 @@
 const firebaseConfig = {
-  apiKey: "AIzaSyB6TDOY2ptExW-mz37VNsdg8eviXwIn-xI",
+  apiKey: "",
   authDomain: "pportfolio-a76a4.firebaseapp.com",
   projectId: "pportfolio-a76a4",
   storageBucket: "pportfolio-a76a4.appspot.com",
-  messagingSenderId: "175686223810",
-  appId: "1:175686223810:web:24d82fdccc7b2d2238b85b",
-  measurementId: "G-JYBLL96L2D"
+  messagingSenderId: "",
+  appId: "1:175686223810:web",
+  measurementId: "G"
 };
 
 if (!firebase.apps.length) {
