@@ -1,4 +1,3 @@
-// Firebase configuration
 const firebaseConfig = {
     apiKey: "AIzaSyB6TDOY2ptExW-mz37VNsdg8eviXwIn-xI",
     authDomain: "pportfolio-a76a4.firebaseapp.com",
@@ -7,11 +6,12 @@ const firebaseConfig = {
     messagingSenderId: "175686223810",
     appId: "1:175686223810:web:24d82fdccc7b2d2238b85b",
     measurementId: "G-JYBLL96L2D"
-};
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore();
-const storage = firebase.storage();
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.firestore();
+  const storage = firebase.storage();
+
 new Vue({
     el: '#app',
     data: {
@@ -45,19 +45,7 @@ new Vue({
                 console.error("Error fetching resume download URL:", error.message);
             });
         },
-        fetchDataFromFirebase() {
-            var storageRef = storage.ref();
-            var background = storageRef.child('plant-background.jpg')
-            var portrait = storageRef.child('Portrait.jpeg')
-            var channelCrm = storageRef.child('ChannelCRM.jpg')
-            var zealand = storageRef.child('Zealand.jpg')
-            resumepdf.getDownloadURL().then(url => {
-                var a = document.getElementById('resume');
-                a.setAttribute('href', url);
-            }).catch(error => {
-                console.error("Error fetching resume download URL:", error.message);
-            });
-        },
+        
         fetchPortfolioItems() {
             db.collection("portfolio").get().then(querySnapshot => {
                 this.portfolioItems = querySnapshot.docs.map(doc => doc.data());
