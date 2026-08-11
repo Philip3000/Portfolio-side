@@ -17,7 +17,29 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Philip Preisler's Programmer Portfolio</title>
+    <title>Philip Preisler | Full-Stack Developer &amp; IT Security</title>
+    <meta name="description"
+        content="Portfolio of Philip Preisler, a full-stack developer focused on software development, IT security, JavaScript, Python, C# and cloud technologies.">
+    <meta name="author" content="Philip Preisler">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://pportfolio-a76a4.web.app/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pportfolio-a76a4.web.app/">
+    <meta property="og:title" content="Philip Preisler | Full-Stack Developer &amp; IT Security">
+    <meta property="og:description"
+        content="Explore Philip Preisler's software development, IT security and cloud projects, skills and experience.">
+    <meta property="og:image" content="https://pportfolio-a76a4.web.app/Portrait.jpeg">
+    <meta property="og:image:alt" content="Portrait of Philip Preisler">
+    <meta property="og:site_name" content="Philip Preisler Portfolio">
+    <meta property="og:locale" content="en_US">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Philip Preisler | Full-Stack Developer &amp; IT Security">
+    <meta name="twitter:description"
+        content="Explore Philip Preisler's software development, IT security and cloud projects, skills and experience.">
+    <meta name="twitter:image" content="https://pportfolio-a76a4.web.app/Portrait.jpeg">
+    <meta name="twitter:image:alt" content="Portrait of Philip Preisler">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JYBLL96L2D"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -28,21 +50,38 @@
     <link rel="icon" href="Portrait.jpeg">
     <script type="application/ld+json">
         {
-          "@context" : "https://schema.org",
-          "@type" : "WebSite",
-          "name" : "Philip Preisler",
-          "alternateName" : "PP",
-          "url" : "https://pportfolio-a76a4.web.app/"
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "WebSite",
+              "@id": "https://pportfolio-a76a4.web.app/#website",
+              "url": "https://pportfolio-a76a4.web.app/",
+              "name": "Philip Preisler Portfolio",
+              "alternateName": "Philip Preisler",
+              "description": "Software development and IT security portfolio of Philip Preisler",
+              "inLanguage": "en",
+              "publisher": {
+                "@id": "https://pportfolio-a76a4.web.app/#person"
+              }
+            },
+            {
+              "@type": "Person",
+              "@id": "https://pportfolio-a76a4.web.app/#person",
+              "name": "Philip Preisler",
+              "url": "https://pportfolio-a76a4.web.app/",
+              "image": "https://pportfolio-a76a4.web.app/Portrait.jpeg",
+              "jobTitle": "Full-Stack Developer",
+              "sameAs": [
+                "https://www.linkedin.com/in/philip-preisler/",
+                "https://github.com/Philip3000"
+              ]
+            }
+          ]
         }
-      </script>
-    <meta property="og:site_name" content="Philip's portfolio">
-    <meta name="description"
-        content="Philip Preisler's portfolio showcasing skills, projects, and knowledge in software development and IT security.">
+    </script>
     <meta name="keywords"
     
         content="Philip Preisler, Programmer, Portfolio, IT Security, Software Development, Fullstack Developer, JavaScript, Python, C#, AWS, CCNA">
-    <meta name="author" content="Philip Preisler">
-    <meta name="robots" content="index, follow">
     <meta name="google-site-verification" content="Kr-az0sPjNpzJVpYICiW6X0O2_awSELilZCHTpmgM9Q" />
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
@@ -94,18 +133,18 @@
     </nav>
     
     <div class="img-container">
-        <img class="img" src="plant-background.jpg" alt="picture_of_leaves">
-        <div class="centered name"><strong>Philip Preisler</strong></div>
+        <img class="img" src="plant-background.jpg" alt="Green leaves background">
+        <h1 class="centered name"><strong>Philip Preisler</strong></h1>
     </div>
     <!-- Sections -->
         <section id="about" class="section">
             <div class="container">
                 <div class="card card-aboutme">
                     <div class="card-body">
-                        <h1 style="text-align: center;"><strong>Who am I?</strong></h1>
+                        <h2 style="text-align: center;"><strong>Who am I?</strong></h2>
                         <div class="row">
                             <div class="card col-md-8 mt-4">
-                                <h2 style="text-align: center;">Interests</h2>
+                                <h3 style="text-align: center;">Interests</h3>
                                 <ul v-for="item in interests">
                                     <li>
                                         {{item.name}}
@@ -118,7 +157,7 @@
                             </div>
                             <div class="col-md-8 mt-4" v-for="item in about">
                                 <div class="card">
-                                    <h2 style="text-align: center;">{{item.title}}</h2>
+                                    <h3 style="text-align: center;">{{item.title}}</h3>
                                     <div class="about-me" style="text-align: justify; margin-top: 20px;">
                                         {{ item.description }}
                                     </div>
@@ -133,7 +172,7 @@
 
         <section id="portfolio" class="section">
             <div class="container">
-                <h1 class="divider" style="text-align: center; margin-bottom: 40px;"><strong>Portfolio</strong></h1>
+                <h2 class="divider" style="text-align: center; margin-bottom: 40px;"><strong>Portfolio</strong></h2>
                 <div class="row">
                     <div class="col-md-4" v-for="item in portfolioItems" :key="item.id">
                         <div class="card mb-4">
@@ -154,7 +193,7 @@
 
         <section id="skills" class="section">
             <div class="container">
-                <h1 class="divider" style="text-align: center; margin-bottom: 40px;"><strong>Skills</strong></h1>
+                <h2 class="divider" style="text-align: center; margin-bottom: 40px;"><strong>Skills</strong></h2>
                 <ul class="list-group">
                     <li class="list-group-item" v-for="skill in skills" :key="skill.id">{{ skill.name }}</li>
                 </ul>
@@ -163,7 +202,7 @@
 
         <section id="knowledgebase" class="section">
             <div class="container">
-                <h1 class="divider" style="text-align: center; margin-bottom: 40px;"><strong>Knowledgebase</strong></h1>
+                <h2 class="divider" style="text-align: center; margin-bottom: 40px;"><strong>Knowledgebase</strong></h2>
                 <div class="row">
                     <div class="col-md-3 mt-2" v-for="item in knowledgebaseItems" :key="item.id">
                         <a :href="item.link" style="text-decoration: none; color:white" target="_blank">
@@ -177,7 +216,7 @@
         </section>
         <section id="relations" class="section">
             <div class="container">
-                <h1 class="divider" style="text-align: center; margin-bottom: 40px;"><strong>Previous relations with</strong></h1>
+                <h2 class="divider" style="text-align: center; margin-bottom: 40px;"><strong>Previous relations with</strong></h2>
                 <div class="row">
                     <div class="col-md-2 mt-2" v-for="item in relations" :key="item.id">
                         <a :href="item.link" style="text-decoration: none;" target="_blank">
